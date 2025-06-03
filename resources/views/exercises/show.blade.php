@@ -12,6 +12,22 @@
             @endif
         </div>
         <div class="mb-4">
+            <strong>Type:</strong>
+            <p>{{ $exercise['Type'] }}</p>
+        </div>
+        <div class="mb-4">
+            <strong>Muscle:</strong>
+            <p>{{ $exercise['Muscle'] }}</p>
+        </div>
+        <div class="mb-4">
+            <strong>Equipment:</strong>
+            <p>{{ $exercise['Equipment'] }}</p>
+        </div>
+        <div class="mb-4">
+            <strong>Difficulty:</strong>
+            <p>{{ $exercise['Difficulty'] }}</p>
+        </div>
+        <div class="mb-4">
             <strong>Instructions:</strong>
             <p>{{ $exercise['Instructions'] }}</p>
         </div>

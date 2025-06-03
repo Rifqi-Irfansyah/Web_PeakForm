@@ -99,7 +99,12 @@ class ExerciseController extends Controller
 
         try {
             $data = [
+                'id' => (int)$id,
                 'name' => $request->name,
+                'type' => $request->type,
+                'muscle' => $request->muscle,
+                'equipment' => $request->equipment,
+                'difficulty' => $request->difficulty,
                 'instructions' => $request->instructions,
             ];
 
@@ -113,7 +118,10 @@ class ExerciseController extends Controller
                     return back()->with('error', 'Failed to upload image');
                 }
             } else {
-                Http::put("{$this->apiUrl}/exercises/{$id}", $data);
+                $response = Http::put("{$this->apiUrl}/exercises/{$id}", $data);
+                if ($response->failed()) {
+                    return back()->with('error', $response->json('message'));
+                }
             }
 
             return redirect()->route('exercises.index')->with('success', 'Exercise updated successfully');

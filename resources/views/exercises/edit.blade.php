@@ -13,6 +13,7 @@
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
+
              <div class="mb-4">
                 <label for="image" class="block text-gray-700">Image</label>
                 @if (isset($exercise['Image']))
@@ -23,6 +24,43 @@
                 @enderror
                 <input type="file" name="image" id="image" class="w-full border rounded px-3 py-2 @error('image') border-red-500 @enderror">
             </div>
+
+            <div class="mb-4">
+                <label for="type" class="block text-gray-700">Type</label>
+                <select name="type" id="type" class="w-full border rounded px-3 py-2">
+                    @foreach(config('exercise.types') as $type)
+                        <option value="{{ $type }}" @if(old('type', $exercise['Type']) == $type) selected @endif>{{ $type }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="muscle" class="block text-gray-700">Muscle</label>
+                <select name="muscle" id="muscle" class="w-full border rounded px-3 py-2">
+                    @foreach(config('exercise.muscles') as $muscle)
+                        <option value="{{ $muscle }}" @if(old('muscle', $exercise['Muscle']) == $muscle) selected @endif>{{ $muscle }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="equipment" class="block text-gray-700">Equipment</label>
+                <select name="equipment" id="equipment" class="w-full border rounded px-3 py-2">
+                    @foreach(config('exercise.equipment') as $equip)
+                        <option value="{{ $equip }}" @if(old('equipment', $exercise['Equipment']) == $equip) selected @endif>{{ $equip }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="difficulty" class="block text-gray-700">Difficulty</label>
+                <select name="difficulty" id="difficulty" class="w-full border rounded px-3 py-2">
+                    @foreach(config('exercise.difficulties') as $level)
+                        <option value="{{ $level }}" @if(old('difficulty', $exercise['Difficulty']) == $level) selected @endif>{{ $level }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="mb-4">
                 <label for="instructions" class="block text-gray-700">Instructions</label>
                 <textarea name="instructions" id="instructions" class="w-full border rounded px-3 py-2 @error('Instructions') border-red-500 @enderror">{{ old('Instructions', $exercise['Instructions']) }}</textarea>
