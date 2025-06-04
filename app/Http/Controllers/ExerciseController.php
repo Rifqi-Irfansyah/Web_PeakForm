@@ -33,29 +33,32 @@ class ExerciseController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'instructions' => 'required|string',
+            'image' => 'nullable|mimes:svg|max:2048',
         ]);
 
         try {
             $data = [
                 'name' => $request->name,
-                'description' => $request->description,
+                'type' => $request->type,
+                'muscle' => $request->muscle,
+                'equipment' => $request->equipment,
+                'difficulty' => $request->difficulty,
+                'instructions' => $request->instructions,
+                'image' => $request->image
             ];
 
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $response = Http::attach(
-                    'image', file_get_contents($image), $image->getClientOriginalName()
-                )->post("{$this->apiUrl}/exercises", $data);
+            $http = Http::asMultipart();
 
-                if ($response->failed()) {
-                    return back()->with('error', 'Failed to upload image');
-                }
-            } else {
-                Http::post("{$this->apiUrl}/exercises", $data);
+            if ($request->hasFile('image')) {
+                $http = $http->attach(
+                    'image',
+                    fopen($request->file('image')->getPathname(), 'r'),
+                    $request->file('image')->getClientOriginalName()
+                );
             }
 
+            $response = Http::asMultipart()->post("{$this->apiUrl}/exercises", $data);
             return redirect()->route('exercises.index')->with('success', 'Exercise created successfully');
         } catch (\Exception $e) {
             Log::error('Error creating exercise: ' . $e->getMessage());
@@ -94,7 +97,7 @@ class ExerciseController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'instructions' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'nullable|mimes:svg|max:2048',
         ]);
 
         try {
