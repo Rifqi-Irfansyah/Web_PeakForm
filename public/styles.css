@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #fff0f0;
+  color: #333;
+}
+
+p{
+  font-weight: bolder;
+}
+
+.title-feature{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+  background: linear-gradient(to bottom, #ffeaea, #fff0f0);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #e63946;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  max-width: 400px;
+}
+
+.download-icon{
+  width: 160px;
+  text-decoration: none;
+}
+
+.btn-appstore {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  width: 400px;
+}
+
+.features {
+  background: linear-gradient(to bottom, #ffffff, #ffecec);
+  padding: 60px 20px;
+}
+
+.features-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #8b0000;
+  margin-bottom: 40px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+/* Gaya umum */
+.feature-icon {
+  width: 35%;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  max-width: 35%;
+}
+
+.feature-text h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.feature-text p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Ganjil: ikon kiri, teks kanan */
+.feature-item:nth-child(odd) {
+  flex-direction: row;
+  text-align: left;
+}
+
+/* Genap: ikon kanan, teks kiri */
+.feature-item:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: left;
+}
+
+/* Responsif mobile */
+@media (max-width: 768px) {
+  .feature-item {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+}
+
+footer {
+  background-color: #1a1a2e;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+}
