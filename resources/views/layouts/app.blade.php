@@ -8,8 +8,16 @@
 </head>
 <body class="bg-gray-100">
     <nav class="bg-blue-600 p-4">
-        <div class="container mx-auto">
-            <a href="{{ route('exercises.index') }}" class="text-white text-lg font-bold">Exercise App</a>
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ route('exercises.index') }}" class="text-white text-lg font-bold">PeakForm</a>
+        
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" 
+                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Logout
+                </button>
+            </form>
         </div>
     </nav>
     <div class="container mx-auto mt-6">

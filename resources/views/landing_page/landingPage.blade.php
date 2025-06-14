@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
-  <header>
+  <!-- <header>
     <nav class="navbar">
       <div class="logo">PeakForm</div>
       <ul class="nav-links">
@@ -16,7 +16,7 @@
         <li><a href="#">Pricing</a></li>
       </ul>
     </nav>
-  </header>
+  </header> -->
 
   <section class="hero">
     <div class="hero-text">
@@ -37,7 +37,7 @@
       <img src="asset/goal.png" alt="Goal" class="feature-icon" />
       <div class="feature-text">
         <h2 class="title-feature">Achieve Your<br>Goal</h3>
-        <p>Our exercise depends on your achieve goal, we provide goal in build muscle and endurance.</p>
+        <p>Our exercise depends on your achieve goal, we provide goal in build muscle and endurance</p>
       </div>
     </div>
 
@@ -45,7 +45,7 @@
       <img src="asset/rank.png" alt="Rank" class="feature-icon" />
       <div class="feature-text">
         <h2 class="title-feature">Rank</h3>
-        <p>Our exercise depends on your achieve goal, we provide goal in build muscle and endurance.</p>
+        <p>Track your progress and see how you stack up against others. Our ranking system keeps you motivated to consistently reach your fitness goals</p>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
       <img src="asset/notif.png" alt="Notification" class="feature-icon" />
       <div class="feature-text">
         <h2 class="title-feature">Notification</h3>
-        <p>Our exercise depends on your achieve goal, we provide goal in build muscle and endurance.</p>
+        <p>Receive timely reminders and important updates right in the app. Never miss a workout, program update, or new achievement</p>
       </div>
     </div>
 
@@ -61,7 +61,7 @@
       <img src="asset/custom.png" alt="Customization" class="feature-icon" />
       <div class="feature-text">
         <h2 class="title-feature">Customization</h3>
-        <p>Our exercise depends on your achieve goal, we provide goal in build muscle and endurance.</p>
+        <p>Easily tailor your workout program by swapping exercises, changing workout days, and adjusting routines to fit your personal goals and schedule</p>
       </div>
     </div>
 </section>
